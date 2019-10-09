@@ -2,6 +2,8 @@ package ie.gmit.ooc2labs.io;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Averager {
@@ -10,27 +12,20 @@ public class Averager {
 		// Instance variables
 		File file = new File(".\\resources\\results.txt");
 		Scanner scannerObject = new Scanner(file);
-		int counter = 0;
 		int total = 0;
+		List<Integer> listOfInts = new ArrayList<Integer>(); // Create an array to hold the ints
+		int nextInt;
 
-		System.out.print("Inputted ints: [");
 		// Loop over ints in file
 		while (scannerObject.hasNextInt()) {
-			int nextInt = scannerObject.nextInt();
-
-			if (scannerObject.hasNextInt()) {
-				System.out.print(nextInt + ", ");
-			} else {
-				System.out.print(nextInt);
-			}
-
-			counter++; // Count total ints in file
-			total += nextInt; // File total of all ints
+			nextInt = scannerObject.nextInt();
+			listOfInts.add(nextInt);
+			total += nextInt;
 		}
-		System.out.print("]\n");
 
-		System.out.println("Total results in file: " + counter);
-		System.out.println("Average of all results: " + (double) total / counter);
+		System.out.println("Inputted ints:" + listOfInts.toString());
+		System.out.println("Total results in file: " + listOfInts.size());
+		System.out.println("Average of all results: " + (double) total / listOfInts.size());
 
 		scannerObject.close();
 
