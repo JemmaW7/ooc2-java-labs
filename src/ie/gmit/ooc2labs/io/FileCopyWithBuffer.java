@@ -2,7 +2,7 @@ package ie.gmit.ooc2labs.io;
 
 import java.io.*;
 
-public class FileCopyLab {
+public class FileCopyWithBuffer {
 
 	public static void main(String[] args) {
 		File inFile = null;
@@ -27,10 +27,10 @@ public class FileCopyLab {
 			}
 			System.out.println("Copy Complete!");
 		} catch (NullPointerException npe) {
-	
+
 			npe.printStackTrace();
 		} catch (FileNotFoundException fnfe) {
-	
+
 			fnfe.printStackTrace();
 		} catch (IOException ioe) {
 
@@ -40,7 +40,7 @@ public class FileCopyLab {
 				try {
 					fileReader.close();
 				} catch (IOException ioe) {
-				
+
 					ioe.printStackTrace();
 				}
 			}
@@ -49,7 +49,7 @@ public class FileCopyLab {
 				try {
 					fileWriter.close();
 				} catch (IOException ioe) {
-					
+
 					ioe.printStackTrace();
 				}
 			}
