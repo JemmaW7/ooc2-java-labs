@@ -2,7 +2,7 @@ package ie.gmit.ooc2labs.io;
 
 import java.io.*;
 
-public class CopyFileUnicode {
+public class CopyFileChar {
 
 	public static void main(String args[]) throws IOException {
 		FileReader in = null;

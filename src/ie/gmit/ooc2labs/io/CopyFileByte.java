@@ -3,7 +3,7 @@ package ie.gmit.ooc2labs.io;
 import java.io.*;
 import java.util.concurrent.TimeUnit;
 
-public class CopyFile {
+public class CopyFileByte {
 	public static void main(String args[]) throws IOException {
 		FileInputStream in = null;
 		FileOutputStream out = null;
