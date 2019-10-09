@@ -2,7 +2,7 @@ package ie.gmit.ooc2labs.io;
 
 import java.io.*;
 
-public class ReadWriteBytes {
+public class HamletReadWriteBytesWithBuffer {
 
 	public static void main(String[] args) throws Exception {
 		File fileToCopy = new File(".\\resources\\hamlet.txt"); 
