@@ -11,6 +11,7 @@ public class FileCopyWithBuffer {
 		FileWriter fileWriter = null;
 		BufferedReader br = null;
 		String data = null;
+
 		try {
 			inFile = new File(".\\resources\\in.txt");
 			outFile = new File(".\\resources\\out.txt");
@@ -27,13 +28,10 @@ public class FileCopyWithBuffer {
 			}
 			System.out.println("Copy Complete!");
 		} catch (NullPointerException npe) {
-
 			npe.printStackTrace();
 		} catch (FileNotFoundException fnfe) {
-
 			fnfe.printStackTrace();
 		} catch (IOException ioe) {
-
 			ioe.printStackTrace();
 		} finally {
 			if (fileReader != null) {
