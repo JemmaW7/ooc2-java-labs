@@ -37,13 +37,13 @@ public class CopyFileByte {
 			while ((b = inputStream.read()) != -1) {
 				// Uncomment next 7 lines to see bytes copied - http://www.asciitable.com/
 				System.out.printf("%d - %c\n", b, b);
-				// Sleep for 1 second
-				TimeUnit.SECONDS.sleep(1);
+				// Sleep for half a second (500 milliseconds)
+				TimeUnit.MILLISECONDS.sleep(500);
 				// Write byte to output.txt
 				outputStream.write(b);
 			}
 
-			System.out.println("Copy complete! See resources/output.txt");
+			System.out.println("\nCopy complete! See resources/output.txt");
 		} catch (FileNotFoundException fnfExceptionObject) {
 			System.out.println("File NOT copied because file not found! See error below:");
 			fnfExceptionObject.printStackTrace();
