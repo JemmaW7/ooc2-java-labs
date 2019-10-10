@@ -8,16 +8,18 @@ import java.util.Scanner;
 
 public class Averager {
 	public static void main(String[] args) {
-
 		// Instance variables
-		File file = new File(".\\resources\\results.txt");
-		try {
-			Scanner scannerObject = new Scanner(file);
+		File file = null;
+		Scanner scannerObject = null;
+		List<Integer> listOfInts = null;
+		int total = 0;
+		int nextInt = 0;
 
-			int total = 0;
+		try {
+			file = new File(".\\resources\\results.txt");
+			scannerObject = new Scanner(file);
 			// Create an array to hold the ints
-			List<Integer> listOfInts = new ArrayList<Integer>();
-			int nextInt;
+			listOfInts = new ArrayList<Integer>();
 
 			// Loop over ints in file
 			while (scannerObject.hasNextInt()) {
@@ -30,10 +32,10 @@ public class Averager {
 			System.out.println("Total results in file: " + listOfInts.size());
 			System.out.println("Average of all results: " + (double) total / listOfInts.size());
 
-			scannerObject.close();
 		} catch (FileNotFoundException fnf) {
 			fnf.printStackTrace();
+		} finally {
+			scannerObject.close();
 		}
-
 	}
 }
