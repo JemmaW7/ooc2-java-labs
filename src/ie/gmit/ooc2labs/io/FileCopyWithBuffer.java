@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class FileCopyWithBuffer {
 
@@ -16,10 +17,11 @@ public class FileCopyWithBuffer {
 		FileWriter fileWriter = null;
 		BufferedReader br = null;
 		String data = null;
+		String[] wordsArray;
 
 		try {
-			inFile = new File(".\\resources\\in.txt");
-			outFile = new File(".\\resources\\out.txt");
+			inFile = new File(".\\resources\\hamlet.txt");
+			outFile = new File(".\\resources\\hamletCopy.txt");
 			// Create File reader to get data from file.
 			fileReader = new FileReader(inFile);
 			br = new BufferedReader(fileReader);
@@ -27,8 +29,15 @@ public class FileCopyWithBuffer {
 			fileWriter = new FileWriter(outFile);
 			// Read in byte from file and store it
 			while ((data = br.readLine()) != null) {
-				// Write out byte from program and store it out.txt
-				fileWriter.write(data);
+				wordsArray = data.split(" ");
+				for (int i = 0; i < wordsArray.length; i++) {
+					System.out.print(wordsArray[i] + " ");
+					// Write out byte from program and store it out.txt
+					fileWriter.write(wordsArray[i] + " ");
+					// Sleep for half a second (100 milliseconds)
+					TimeUnit.MILLISECONDS.sleep(100);
+				}
+				System.out.print("\n");
 				fileWriter.write("\n");
 			}
 			System.out.println("Copy Complete!");
@@ -38,12 +47,13 @@ public class FileCopyWithBuffer {
 			fnfe.printStackTrace();
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		} finally {
 			if (fileReader != null) {
 				try {
 					fileReader.close();
 				} catch (IOException ioe) {
-
 					ioe.printStackTrace();
 				}
 			}
@@ -52,7 +62,6 @@ public class FileCopyWithBuffer {
 				try {
 					fileWriter.close();
 				} catch (IOException ioe) {
-
 					ioe.printStackTrace();
 				}
 			}
