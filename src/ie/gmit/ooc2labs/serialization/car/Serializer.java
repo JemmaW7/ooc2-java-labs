@@ -1,5 +1,5 @@
 //Java code for serialization of a Car object 
-package ie.gmit.ooc2labs.serialization;
+package ie.gmit.ooc2labs.serialization.car;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;

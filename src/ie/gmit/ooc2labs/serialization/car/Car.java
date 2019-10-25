@@ -1,4 +1,4 @@
-package ie.gmit.ooc2labs.serialization;
+package ie.gmit.ooc2labs.serialization.car;
 
 public class Car implements java.io.Serializable{
 	
