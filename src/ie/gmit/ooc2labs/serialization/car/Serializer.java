@@ -11,9 +11,9 @@ import java.util.List;
 public class Serializer {
 	public static void main(String[] args) {
 
-		Car CarObject1 = null; // Car Object to serialize
+		//Car CarObject1 = null; // Car Object to serialize
 		
-		//Car CarObject2 = null; // Car Object to serialize
+		Car CarObject2 = null; // Car Object to serialize
 		//List<Car> cars = null;
 		
 		// Object Streams out and into storage file
@@ -23,9 +23,8 @@ public class Serializer {
 		String objectStorageFileName = ".\\resources\\objectStorageFile.ser";
 
 		// Create a Car object to be serialized
-		CarObject1 = new Car("ford", 1);
-		
-		//CarObject2 = new Car("Nissan", 2);
+		//CarObject1 = new Car("ford", 1);
+		CarObject2 = new Car("Nissan", 2, "Michael D Higgins");
 		//cars = new ArrayList<Car>();
 		//cars.add(CarObject1);
 		//cars.add(CarObject2);
@@ -35,8 +34,8 @@ public class Serializer {
 			fileOutStream = new FileOutputStream(objectStorageFileName);
 			objectOutStream = new ObjectOutputStream(fileOutStream);
 			// Serialize Car object and stream to file for storage
-			objectOutStream.writeObject(CarObject1);
-			
+			//objectOutStream.writeObject(CarObject1);
+			objectOutStream.writeObject(CarObject2);
 			//objectOutStream.writeObject(cars);
 			
 			System.out.println("The Car object/s have been serialized!");

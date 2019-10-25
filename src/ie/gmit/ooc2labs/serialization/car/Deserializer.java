@@ -32,6 +32,7 @@ public class Deserializer {
 			System.out.println("Car object/s have been deserialized from " + objectStorageFileName);
 			System.out.println("Deserialized Car Make = " + deserializedCarObject.make);
 			System.out.println("Deserialized Car Age = " + deserializedCarObject.age);
+//			System.out.println("Deserialized Car Age = " + deserializedCarObject.owner);
 //			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).make);
 //			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).age);
 //			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).make);
