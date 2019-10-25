@@ -5,12 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Deserializer {
 	public static void main(String[] args) {
 
 		Car deserializedCarObject = null; // Car Object to store deserialized Car Object
-
+		//List<Car> deserializedCarList = new ArrayList<Car>();
+		
 		// Object Streams out of storage file
 		FileInputStream fileInStream = null;
 		ObjectInputStream objectInStream = null;
@@ -24,10 +27,15 @@ public class Deserializer {
 			objectInStream = new ObjectInputStream(fileInStream);
 			// Deserialization of object and storage to empty Car object
 			deserializedCarObject = (Car) objectInStream.readObject();
-
-			System.out.println("Car object has been deserialized from " + objectStorageFileName);
+			//deserializedCarList = (ArrayList<Car>) objectInStream.readObject();
+			
+			System.out.println("Car object/s have been deserialized from " + objectStorageFileName);
 			System.out.println("Deserialized Car Make = " + deserializedCarObject.make);
 			System.out.println("Deserialized Car Age = " + deserializedCarObject.age);
+//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).make);
+//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).age);
+//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).make);
+//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).age );
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
