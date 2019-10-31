@@ -11,4 +11,4 @@ USER root
 #
 # More information: https://www.gitpod.io/docs/42_config_docker/
 && bash -c ". /home/gitpod/.sdkman/bin/sdkman-init.sh \
-             && sdk install java 13.0.1.open"
+             && sdk install java 13.0.1-open"
