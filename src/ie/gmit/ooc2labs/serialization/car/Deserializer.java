@@ -11,9 +11,10 @@ import java.util.List;
 public class Deserializer {
 	public static void main(String[] args) {
 
-		Car deserializedCarObject = null; // Car Object to store deserialized Car Object
-		//List<Car> deserializedCarList = new ArrayList<Car>();
-		
+		// Car deserializedCarObject = null; // Car Object to store deserialized Car
+		// Object
+		List<Car> deserializedCarList = new ArrayList<Car>();
+
 		// Object Streams out of storage file
 		FileInputStream fileInStream = null;
 		ObjectInputStream objectInStream = null;
@@ -22,33 +23,37 @@ public class Deserializer {
 		String objectStorageFileName = ".\\resources\\objectStorageFile.ser";
 
 		try {
-			// Create output object stream from file
+			// Create input object stream from file
 			fileInStream = new FileInputStream(objectStorageFileName);
 			objectInStream = new ObjectInputStream(fileInStream);
-			// Deserialization of object and storage to empty Car object
-			deserializedCarObject = (Car) objectInStream.readObject();
-			//deserializedCarList = (ArrayList<Car>) objectInStream.readObject();
-			
-			System.out.println("Car object/s have been deserialized from " + objectStorageFileName);
-			System.out.println("Deserialized Car Make = " + deserializedCarObject.make);
-			System.out.println("Deserialized Car Age = " + deserializedCarObject.age);
-//			System.out.println("Deserialized Car Age = " + deserializedCarObject.owner);
-//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).make);
-//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).age);
-//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).make);
-//			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).age );
 
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			// Deserialization of object and storage to empty Car object
+			// deserializedCarObject = (Car) objectInStream.readObject();
+
+			deserializedCarList = (ArrayList<Car>) objectInStream.readObject();
+
+			System.out.println("Car object/s have been deserialized from " + objectStorageFileName);
+			// System.out.println("Deserialized Car Make = " +
+			// deserializedCarObject.getMake());
+			// System.out.println("Deserialized Car Age = " +
+			// deserializedCarObject.getAge());
+//			System.out.println("Deserialized Car Age = " + deserializedCarObject.owner);
+			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).getMake());
+			System.out.println("Deserialized Car Age = " + deserializedCarList.get(0).getAge());
+			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).getMake());
+			System.out.println("Deserialized Car Age = " + deserializedCarList.get(1).getAge());
+
+		} catch (FileNotFoundException fnfe) {
+			fnfe.printStackTrace();
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				// Close input streams
-				objectInStream.close();
 				fileInStream.close();
+				objectInStream.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

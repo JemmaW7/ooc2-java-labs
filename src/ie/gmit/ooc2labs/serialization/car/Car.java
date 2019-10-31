@@ -1,24 +1,48 @@
 package ie.gmit.ooc2labs.serialization.car;
 
-public class Car implements java.io.Serializable{
-	
+import java.io.Serializable;
+
+public class Car implements Serializable {
+
 	private static final long serialVersionUID = -644012276880766677L;
-	public transient String owner;
-	public String make;
-	public int age; 
-	 
-	// Constructor 
-	public Car(String make, int age) 
-	{ 
-		this.make = make; 
-		this.age = age; 
-	}
-	
-	// Constructor 
-	public Car(String make, int age, String owner) 
-	{ 
-		this.make = make; 
+	private transient String owner;
+	private String make;
+	private int age;
+
+	// Constructors
+	public Car(String make, int age) {
+		this.make = make;
 		this.age = age;
+	}
+
+	public Car(String make, int age, String owner) {
+		this.make = make;
+		this.age = age;
+		this.setOwner(owner);
+	}
+
+	// Getters and Setters
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getOwner() {
+		return owner;
+	}
+
+	public void setOwner(String owner) {
 		this.owner = owner;
-	} 
+	}
 }
