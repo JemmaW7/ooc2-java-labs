@@ -9,3 +9,7 @@ ports:
 tasks:
 - init: echo 'init script' # runs during prebuild
   command: echo 'start script'
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack@0.8.0:e/rgc3uUFWKcrT0VEIg1wQ==
+    - formulahendry.code-runner@0.9.14:U0vUPTCchGiTYlRHpW9ljQ==
