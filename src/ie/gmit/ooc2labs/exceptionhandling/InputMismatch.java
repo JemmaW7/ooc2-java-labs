@@ -3,7 +3,7 @@ package ie.gmit.ooc2labs.exceptionhandling;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class InputMismatchException {
+public class InputMismatch {
 
 	public static void main(String args[]) {
 		// Instance Variables
