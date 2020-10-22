@@ -1,16 +1,25 @@
 package ie.gmit.ooc2labs.exceptionhandling;
 
 public class JavaExceptionExample {
+	
 	public static void main(String args[]) {
+		
 		try {
-			// code that may raise exception
+			// Code that may raise exception
 			int data = 100 / 0;
-			
+			// After exception is thrown the rest of the try block does not get executed
+			System.out.println("I will not get executed!");
 			System.out.println(data);
-		} catch (Exception exception) {
+		} catch (ArithmeticException exception) {
 			System.out.println(exception);
+			System.out.println(exception.getStackTrace()[0]);
+			// Use printStackTrace() method to print both
+//			exception.printStackTrace();  // This will give line number
 		}
-		// rest code of the program
-		System.out.println("Program continues running rest of the code...");
-	}
-}
+		
+		// Rest of code in the program
+		System.out.println("\n\n\nProgram continues running rest of the code...");
+		
+	} // End main
+	
+} // End class
