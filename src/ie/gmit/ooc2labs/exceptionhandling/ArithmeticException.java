@@ -1,6 +1,6 @@
 package ie.gmit.ooc2labs.exceptionhandling;
 
-public class JavaExceptionExample {
+public class ArithmeticException {
 	
 	public static void main(String args[]) {
 		
