@@ -1,39 +1,56 @@
 package ie.gmit.ooc2labs.io;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class CopyFileChar {
+	public static void main(String args[]) {
 
-	public static void main(String args[]) throws IOException {
-		FileReader in = null;
-		FileWriter out = null;
-		int c;
+		// Create stream references
+		FileReader charInputStream = null;
+		FileWriter charOutputStream = null;
+		int c; // Create int to read and write chars.
 
+		// Protect stream creation and read/write code as it may throw an exception
 		try {
-			in = new FileReader("resources/input.txt");
-			out = new FileWriter("resources/output.txt");
+			charInputStream = new FileReader("resources/input.txt");
+			charOutputStream = new FileWriter("resources/output.txt");
 
-			while ((c = in.read()) != -1) {
-				// Uncomment to see bytes copied - http://www.asciitable.com/
-				// System.out.println(c);
-				System.out.printf("%d - %c\n", c, c);
-				// Sleep for half a second (500 milliseconds)
+			System.out.println("Byte \t| Character");
+			System.out.println("-------------------");
+
+			while ((c = charInputStream.read()) != -1) {
+
+				// Show bytes and characters copied - http://www.asciitable.com/
+				System.out.printf("%d \t| %c\n", c, c);
+				// Sleep for 500 milliseconds (i.e. half a second) so we can watch write process
 				TimeUnit.MILLISECONDS.sleep(500);
-				out.write(c);
+				charOutputStream.write(c);
 			}
+
+			System.out.println("------------------");
+			System.out.println("Copy completed sucessfully! See resources/output.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			if (in != null) {
-				in.close();
-			}
-			if (out != null) {
-				out.close();
+			try {
+				// If the streams got opened then close them
+				if (charInputStream != null) {
+					charInputStream.close();
+				}
+				if (charOutputStream != null) {
+					charOutputStream.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
-	}
-}
+	} // End main
+} // End Class
