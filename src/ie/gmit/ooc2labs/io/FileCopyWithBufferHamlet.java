@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class FileCopyWithBuffer {
+public class FileCopyWithBufferHamlet {
 
 	public static void main(String[] args) {
 		File inFile = null;

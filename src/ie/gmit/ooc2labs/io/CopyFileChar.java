@@ -40,6 +40,7 @@ public class CopyFileChar {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
+			// Try and finally close streams
 			try {
 				// If the streams got opened then close them
 				if (charInputStream != null) {
