@@ -43,6 +43,7 @@ public class CopyFileByte {
 //			System.out.println("Copy FAILED because write was interrupted! See error below:");
 //			ioExceptionObject.printStackTrace();
 //		} finally {
+			// Try and finally close streams
 //			try {
 //				if (byteInputStream != null) {
 					byteInputStream.close();
