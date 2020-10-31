@@ -54,11 +54,11 @@ public class CopyFileCharBuffer {
 		} finally {
 			try {
 				if (charInputStream != null) {
-					charInputStreamBuffer.close(); // Flushes buffer, which transfers buffer data from the buffer to the file, then closes buffer.
+					charInputStreamBuffer.close(); 
 					charInputStream.close();
 				}
 				if (charOutputStream != null) {
-					charOutputStreamBuffer.close();
+					charOutputStreamBuffer.close(); // Flushes buffer, which transfers buffer data from the buffer to the file, then closes buffer.
 					charOutputStream.close();
 				}
 			} catch (IOException ioe) {
