@@ -18,7 +18,6 @@ class Employee implements Serializable {
 
 	// Constructor
 	public Employee(String ppsn, String surname) {
-		super();
 		this.ppsn = ppsn;
 		this.surname = surname;
 	}
