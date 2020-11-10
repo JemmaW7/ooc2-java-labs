@@ -12,7 +12,7 @@ public class DeserializeEmployee implements Serializable {
 
 	public static void main(String[] args) {
 		Employee employeeObject1 = null;
-		File inputByteFile = new File(".\\resources\\input.txt");
+		File inputByteFile = new File(".\\resources\\employeeByteFile.ser");
 		FileInputStream inputByteFileStream = null;
 		ObjectInputStream inputByteFileStreamForObjects = null;
 		

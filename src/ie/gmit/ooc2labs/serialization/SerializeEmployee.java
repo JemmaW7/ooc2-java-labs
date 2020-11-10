@@ -12,7 +12,7 @@ public class SerializeEmployee implements Serializable {
 
 	public static void main(String[] args) {
 		Employee employeeObject1 = new Employee("G12345678", "Murphy");
-		File outputByteFile = new File(".\\resources\\input.txt");
+		File outputByteFile = new File(".\\resources\\employeeByteFile.ser");
 		FileOutputStream outputByteFileStream = null;
 		ObjectOutputStream outputByteFileStreamForObjects = null;
 		// Print out Employee Fields
