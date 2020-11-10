@@ -1,70 +1,39 @@
 package ie.gmit.ooc2labs.serialization;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;;
 
-public class SerializeEmployee {
+public class SerializeEmployee implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String[] args) {
-		Employee object = new Employee(2, 1000, "ab", 20);
-		String filename = "shubham.txt";
-
+		Employee employeeObject1 = new Employee("G12345678", "Murphy");
+		File outputByteFile = new File(".\\resources\\input.txt");
+		FileOutputStream outputByteFileStream = null;
+		ObjectOutputStream outputByteFileStreamForObjects = null;
+		// Print out Employee Fields
+		System.out.println(employeeObject1.toString());
+		
 		// Serialization
 		try {
-
-			// Saving of object in a file
-			FileOutputStream file = new FileOutputStream(filename);
-			ObjectOutputStream out = new ObjectOutputStream(file);
+			// Saving of object to a file
+			outputByteFileStream = new FileOutputStream(outputByteFile);
+			outputByteFileStreamForObjects = new ObjectOutputStream(outputByteFileStream);
 
 			// Method for serialization of object
-			out.writeObject(object);
+			outputByteFileStreamForObjects.writeObject(employeeObject1);
 
-			out.close();
-			file.close();
+			outputByteFileStreamForObjects.close();
+			outputByteFileStream.close();
 
-			System.out.println("Object has been serialized\n" + "Data before Deserialization.");
-			printdata(object);
-
-			// value of static variable changed
-			object.b = 2000;
-		}
-
-		catch (IOException ex) {
+			System.out.println("Object has been serialized");
+		} catch (IOException ex) {
 			System.out.println("IOException is caught");
-		}
+		} // End try/catch
 
-		object = null;
-
-		// Deserialization
-		try {
-
-			// Reading the object from a file
-			FileInputStream file = new FileInputStream(filename);
-			ObjectInputStream in = new ObjectInputStream(file);
-
-			// Method for deserialization of object
-			object = (Employee) in.readObject();
-
-			in.close();
-			file.close();
-			
-			System.out.println("Object has been deserialized\n" + "Data after Deserialization.");
-			printdata(object);
-
-			// System.out.println("z = " + object1.z);
-		}
-
-		catch (IOException ex) {
-			System.out.println("IOException is caught");
-		}
-
-		catch (ClassNotFoundException ex) {
-			System.out.println("ClassNotFoundException" + " is caught");
-		}
-	}
-	
-	public static void printdata(Employee object1) {
-		System.out.println("a = " + object1.a + " //transient");
-		System.out.println("b = " + object1.b + " //static");
-		System.out.println("name = " + object1.name);
-		System.out.println("age = " + object1.age);
-	}
-}
+	} // End main
+} // End Class
