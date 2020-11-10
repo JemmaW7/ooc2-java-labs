@@ -15,7 +15,7 @@ public class DeserializeEmployee implements Serializable {
 		File inputByteFile = new File(".\\resources\\employeeByteFile.ser");
 		FileInputStream inputByteFileStream = null;
 		ObjectInputStream inputByteFileStreamForObjects = null;
-		
+
 		// Serialization
 		try {
 			// Saving of object to a file
@@ -24,7 +24,7 @@ public class DeserializeEmployee implements Serializable {
 
 			// Method for serialization of object
 			employeeObject1 = (Employee) inputByteFileStreamForObjects.readObject();
-						
+
 			inputByteFileStreamForObjects.close();
 			inputByteFileStream.close();
 
@@ -32,13 +32,10 @@ public class DeserializeEmployee implements Serializable {
 			System.out.println(employeeObject1.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
-		} 
-		catch (ClassNotFoundException e) {
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}// End try/catch
+		} // End try/catch
 
 	} // End main
 
-	
-	
 } // End Class

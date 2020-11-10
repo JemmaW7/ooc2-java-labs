@@ -15,7 +15,7 @@ class Employee implements Serializable {
 	// Instance Variables
 	private String surname;
 	private transient String ppsn; // Is not serialized
-	
+
 	// Constructor
 	public Employee(String ppsn, String surname) {
 		super();

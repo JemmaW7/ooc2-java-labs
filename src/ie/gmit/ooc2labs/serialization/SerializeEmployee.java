@@ -17,7 +17,7 @@ public class SerializeEmployee implements Serializable {
 		ObjectOutputStream outputByteFileStreamForObjects = null;
 		// Print out Employee Fields
 		System.out.println(employeeObject1.toString());
-		
+
 		// Serialization
 		try {
 			// Saving of object to a file
