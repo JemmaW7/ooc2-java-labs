@@ -13,9 +13,9 @@ class Employee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// Instance Variables
-	private String surname;
 	private transient String ppsn; // Is not serialized
-
+	private String surname;
+	
 	// Constructor
 	public Employee(String ppsn, String surname) {
 		this.ppsn = ppsn;

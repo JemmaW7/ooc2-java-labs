@@ -4,17 +4,18 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;;
+import java.io.Serializable;
 
 public class SerializeEmployee implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 100L;
 
 	public static void main(String[] args) {
 		Employee employeeObject1 = new Employee("G12345678", "Murphy");
 		File outputByteFile = new File(".\\resources\\employeeByteFile.ser");
 		FileOutputStream outputByteFileStream = null;
 		ObjectOutputStream outputByteFileStreamForObjects = null;
+		
 		// Print out Employee Fields
 		System.out.println(employeeObject1.toString());
 
