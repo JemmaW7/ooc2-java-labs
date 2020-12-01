@@ -8,9 +8,12 @@ class ConvertArgsFormat {
 		int b = 0;
 		int c = 0;
 		
-		// Convert the first two command line arguments to integers and store
-		a = Integer.parseInt(args[0]);
-		b = Integer.parseInt(args[1]);
+		// Check if more than two command line arguments were entered
+		if (args.length > 2) {
+			// Convert the first two command line arguments to integers and store
+			a = Integer.parseInt(args[0]);
+			b = Integer.parseInt(args[1]);
+		}
 		
 		// Sum the stored command line arguments
 		c = a + b; 
