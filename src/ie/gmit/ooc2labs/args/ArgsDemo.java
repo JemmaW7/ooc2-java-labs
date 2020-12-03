@@ -3,17 +3,17 @@ package ie.gmit.ooc2labs.args;
 public class ArgsDemo {
 
 	public static void main(String[] args) {
-		System.out.println("The args object ID is " + args);
+		//System.out.println("The args object ID is " + args);
 		System.out.println("The number of args is " + args.length);
 
-		System.out.println("The Arguments are:");
+		System.out.println("The following command line arguments were passed:");
 		for (int i = 0; i < args.length; i++) {
 
-			// if (args[i].equals("GMIT")) {
-			// System.out.println(args[i] + " ROCKS!");
-			// } else {
-			System.out.println(args[i]);
-			// }
+			if (args[i].equals("GMIT")) {
+			System.out.println(args[i] + " ROCKS!");
+			} else {
+				System.out.println(args[i]);
+			}
 		}
 		
 		System.out.println("The Arguments backwards are:");

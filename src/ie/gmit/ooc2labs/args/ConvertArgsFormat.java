@@ -28,8 +28,10 @@ class ConvertArgsFormat {
 				e.printStackTrace();
 			} // End try/catch
 			
+		} else {
+			System.out.println("Please enter 2 or more command line arguments.");
 		} // End if
-
+		
 	} // End main method
 
 }// End Main class
