@@ -27,10 +27,10 @@ public class ArgsDemo {
 //		}
 
 		// Print the arguments passed to this program in reverse order
-		System.out.println("The Arguments backwards are:");
-		for (int i = args.length - 1; i >= 0; i--) {
-			System.out.println("Argument "+ (i + 1) + ": " + args[i]);
-		}
+//		System.out.println("The Arguments backwards are:");
+//		for (int i = args.length - 1; i >= 0; i--) {
+//			System.out.println("Argument "+ (i + 1) + ": " + args[i]);
+//		}
 
 		// Print every second argument passed to this program
 //		System.out.println("Every Second Argument is:");
