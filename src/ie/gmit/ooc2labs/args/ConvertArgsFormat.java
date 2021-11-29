@@ -23,11 +23,14 @@ class ConvertArgsFormat {
 				// Print the result of a + b to the console
 				System.out.println(a + " + " + b + " = " + result);			
 //			} catch (NumberFormatException e) {
-//				System.out.println("Please enter integers for the first two command line arguments!\n");
-//				e.printStackTrace();
+//				System.out.println("You did not enter integers!");
+//				System.out.println("Please try again. Enter 2 integers as command line arguments.\n");
 //			} // End try/catch	
+				
 //		} else {
-//			System.out.println("Please try again. Enter 2 integer command line arguments.");
+				
+//			System.out.println("Please try again. Enter 2 integers as command line arguments.");
+				
 //		} // End if
 		
 	} // End main
