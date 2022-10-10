@@ -38,34 +38,31 @@ public class CollectionsExample {
             if (IntegerArray[i] != IntegerArray.length) {
             	System.out.print(IntegerArray[i] + ", ");
             } else {
-            	System.out.print(IntegerArray[i] + "]");
+            	System.out.println(IntegerArray[i] + "]");
             }
         }
+
+		// Find the minimum value in all arrays
+		// Find the minimum value in the regular integer array
+		int min = IntegerArray[0];
+	    for (int i = 1; i < IntegerArray.length; i++) {
+	        if (IntegerArray[i] < min) {
+	            min = IntegerArray[i];
+	        } //End if
+	    } // End for
+	    
+	    System.out.println(min);
+	    
+	    // Find minimum values of ArrayLists and LinkedLists 
+		System.out.println(Collections.min(IntegerArrayList));
+		System.out.println(Collections.min(IntegerLinkedList));
+
+		// Use an Iterator to loop through the IntegerArrayList
+		Iterator<Integer> it = IntegerArrayList.iterator();
+		while(it.hasNext()) {
+			Integer obj = (Integer) it.next();
+			System.out.println(obj);
+		} // End while
 		
-//		// Find minimum value in all arrays
-//		while(it.hasNext()) {
-//			String obj = (String) it.next();
-//			System.out.println(obj);
-//		}
-//		
-//		// Find the minimum value in the regular integer array
-//		int max = IntegerArray[0];
-//	    for (int i = 0; i < chars.length; i++) {
-//	        if (IntegerArray[i] > max) {
-//	            max = IntegerArray[i];
-//	        }
-//	    }
-//	    
-//		
-//		System.out.println(Collections.min(IntegerArrayList));
-//		System.out.println(Collections.min(IntegerLinkedList));
-//		System.out.println(Collections.max(IntegerArrayList));
-//		System.out.println(Collections.max(IntegerLinkedList));
-//		
-//		System.out.println(IntegerArray);
-//		System.out.println(IntegerArrayList);
-//		System.out.println(IntegerLinkedList);
-		
-	}
-	
-}
+	} // End main	
+} // End class
