@@ -1,4 +1,4 @@
-package ie.gmit.ooc2labs.collections;
+package ie.atu.ooc2labs.collections;
 
 import java.util.ArrayList; // Use Ctrl+Shift+O to add
 import java.util.Iterator;
