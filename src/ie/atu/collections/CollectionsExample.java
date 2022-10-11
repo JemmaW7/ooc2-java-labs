@@ -3,7 +3,7 @@ package ie.atu.collections;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
-import java.util.Iterator;
+import java.util.ListIterator;
 
 public class CollectionsExample {
 
@@ -57,12 +57,34 @@ public class CollectionsExample {
 		System.out.println(Collections.min(IntegerArrayList));
 		System.out.println(Collections.min(IntegerLinkedList));
 
-		// Use an Iterator to loop through the IntegerArrayList
-		Iterator<Integer> it = IntegerArrayList.iterator();
-		while(it.hasNext()) {
-			Integer obj = (Integer) it.next();
-			System.out.println(obj);
-		} // End while
+		// Use an ListIterator to loop through the IntegerArrayList
+		ListIterator<Integer> listIteratorObject = (ListIterator<Integer>) IntegerArrayList.listIterator();
+	    
+		System.out.println("Traversing the list in forward direction:");
+	    while(listIteratorObject.hasNext()){
+	       System.out.println(listIteratorObject.next());
+	    }
+	    
+	    System.out.println("\nTraversing the list in backward direction:");
+	    while(listIteratorObject.hasPrevious()){
+	       System.out.println(listIteratorObject.previous());
+	    }
+	    
+	    // we want to remove 2 from the IntegerArrayList
+        System.out.println("Remove 2 from the IntegerArrayList using the listIteratorObject...");
+	    for (Integer IntegerArrayListElement : IntegerArrayList) {
+        	// Select element from the IntegerArrayList
+        	listIteratorObject.next();
+            // Search for the required element to remove
+            if (IntegerArrayListElement == 2) {
+            	// remove element from IntegerArrayList
+                listIteratorObject.remove();
+                // Print the new IntegerArrayList with the element removed
+                System.out.println(IntegerArrayList);
+                // Break out of the loop as there is no need to keep searching
+                break;
+            }
+        }
 		
 	} // End main	
 } // End class
