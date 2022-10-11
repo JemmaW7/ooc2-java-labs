@@ -43,7 +43,7 @@ public class CollectionsExample {
 				System.out.println(integerArray[i] + "]");
 			}
 		}
-		
+
 		System.out.println("Print regular array with toString method");
 		System.out.println(Arrays.toString(integerArray));
 
@@ -51,14 +51,41 @@ public class CollectionsExample {
 		System.out.println("First element in the Integer Array: " + integerArray[0]);
 		System.out.println("First element in the Integer ArrayList: " + integerArrayList.get(0));
 		System.out.println("First element in the Integer LinkedList: " + integerLinkedList.get(0));
-		
+
 		// Get the last element from each array
 		System.out.println("Last element in the Integer Array: " + integerArray[integerArray.length - 1]);
-		System.out.println("Last element in the Integer ArrayList: " + integerArrayList.get(integerArrayList.size() - 1));
-		System.out.println("Last element in the Integer LinkedList: " + integerLinkedList.get(integerLinkedList.size() - 1));
-		
-		// Find the minimum value in all arrays
-		// Find the minimum value in the regular integer array
+		System.out
+				.println("Last element in the Integer ArrayList: " + integerArrayList.get(integerArrayList.size() - 1));
+		System.out.println(
+				"Last element in the Integer LinkedList: " + integerLinkedList.get(integerLinkedList.size() - 1));
+
+		// Add a new element which increases the length of the regular array
+		int[] integerArrayBigger = new int[4]; // Create new array with 4 elements
+		System.arraycopy(integerArray, 0, integerArrayBigger, 0, integerArray.length); // Copy all contents of old to
+																						// new
+		// OR do the below instead of the two lines above
+		// int[] integerArrayBigger = Arrays.copyOf(integerArray, 4);
+		// Add 4 to the last element of the array
+		integerArrayBigger[integerArrayBigger.length - 1] = 4;
+		// Print the new bigger array
+		System.out.println("New Bigger Array: " + Arrays.toString(integerArrayBigger));
+
+		integerArrayList.add(4);
+		System.out.println(integerArrayList);
+		integerLinkedList.add(4);
+		System.out.println(integerLinkedList);
+
+		// Remove the last element from the Array
+		int[] integerArraySmaller = Arrays.copyOf(integerArrayBigger, 3);
+		// Print the smaller array
+		System.out.println("New Smaller Array: " + Arrays.toString(integerArraySmaller));
+
+		integerArrayList.remove(integerArrayList.size() - 1);
+		System.out.println(integerArrayList);
+		integerLinkedList.remove(integerLinkedList.size() - 1);
+		System.out.println(integerLinkedList);
+
+		// Find the minimum value in the regular arrays
 		int min = integerArray[0];
 		for (int i = 1; i < integerArray.length; i++) {
 			if (integerArray[i] < min) {
@@ -68,7 +95,7 @@ public class CollectionsExample {
 
 		System.out.println(min);
 
-		// Find minimum values of ArrayLists and LinkedLists
+		// Find minimum values in the ArrayLists and LinkedLists
 		System.out.println(Collections.min(integerArrayList));
 		System.out.println(Collections.min(integerLinkedList));
 
@@ -85,6 +112,6 @@ public class CollectionsExample {
 		while (listIteratorForIAL.hasPrevious()) {
 			System.out.println(listIteratorForIAL.previous());
 		}
-		
+
 	} // End main
 } // End class
