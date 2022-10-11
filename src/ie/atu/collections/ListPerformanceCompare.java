@@ -3,7 +3,7 @@ package ie.atu.collections;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class ListPerf {
+public class ListPerformanceCompare {
 
 	public static void main(String[] args) {
 		
