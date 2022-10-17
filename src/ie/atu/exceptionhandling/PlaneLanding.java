@@ -11,6 +11,8 @@ public class PlaneLanding {
 			// Fault in code
 			int i = 10 / 0;
 			
+			System.out.println(i); // Never reach this line due to fault just above.
+			
 		} catch (Exception ex) {
 			
 			// Error handling code
