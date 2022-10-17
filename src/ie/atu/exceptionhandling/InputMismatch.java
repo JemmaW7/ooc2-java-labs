@@ -24,14 +24,16 @@ public class InputMismatch {
 				// Print Result
 				System.out.println("\nResult: " + result);
 			} catch (InputMismatchException inputMisEx) {
-				System.out.println("\nYou did not enter an integer!");
-				System.out.print("Exception: " + inputMisEx);
-				System.out.println("\nPlease try again!\n");;
+				System.err.println("\nException in thread: " + inputMisEx + "\n\tat " + inputMisEx.getStackTrace()[inputMisEx.getStackTrace().length - 1]);
+				//System.err.println("\nYou did not enter an integer!");
+				//System.out.println(inputMisEx.);
+				//System.err.println("\tat " + inputMisEx.getStackTrace()[inputMisEx.getStackTrace().length - 1]);
+				//System.out.println("\nPlease try again!\n");
 			} finally {
 				userInput.close(); // Close Scanner object
 			}
 		
-		System.out.println("Program continues on...");
+		System.out.println("\n\n\nProgram continues on...");
 		System.out.println("Program ending gracefully...");
 
 	} // end main

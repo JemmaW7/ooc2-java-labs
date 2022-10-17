@@ -1,9 +1,9 @@
 package ie.atu.exceptionhandling;
 
 public class Arithmetic {
-	
+
 	public static void main(String args[]) {
-		
+
 		try {
 			// Code that may raise exception
 			int result = 100 / 0;
@@ -12,14 +12,13 @@ public class Arithmetic {
 			System.out.println(result);
 		} catch (ArithmeticException exception) {
 			System.out.println(exception);
-			System.out.println(exception.getStackTrace()[0]);
+			// System.out.println(exception.getStackTrace()[0]);
 			// Use printStackTrace() method to print both
-//			exception.printStackTrace();  // This will give line number
+			// exception.printStackTrace();  // This will give line number
 		}
-		
+
 		// Rest of code in the program
 		System.out.println("\n\n\nProgram continues running rest of the code...");
-		
+
 	} // End main
-	
 } // End class
