@@ -1,29 +1,24 @@
 package ie.atu.exceptionhandling;
 
-public class PlaneLanding {
-	public static void main(String[] args) {
-		
-		// Protect code by surrounding with try/catch block
-		try {
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 
-			System.out.println("Code running to land plane...\n");
+public class Car {
+    // Instance variables
 
-			// Fault in code
-			int i = 10 / 0;
-			
-			System.out.println(i); // Never reach this line due to fault just above.
-			
-		} catch (Exception ex) {
-			
-			// Error handling code
-			System.err.println("--------------------------------------------------------------------------------------");
-			System.err.println("Faulted detected and is being handled... don't panic nobody is going to die");
-			ex.printStackTrace();
-			System.err.println("--------------------------------------------------------------------------------------");
+    // Constructor
 
-		} // End try/catch
+    // Getters and Setters
 
-		System.out.println("\nPlane finishes landing safely!");
+    // Methods
+    @SuppressWarnings("unused")
+	public void readInCarDetails() {
+        // The program does not compile, because we use FileReader() throws a checked exception, FileNotFoundException.
+        try {
+			FileReader file = new FileReader("C:\\test\\a.txt");
+        } catch (FileNotFoundException fnfe) {
+            fnfe.printStackTrace();
+        }
+    } // End readInCarDetails method
 
-	} // End main
 } // End Class
